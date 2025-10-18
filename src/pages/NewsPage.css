@@ -1,0 +1,31 @@
+.news-page {
+  padding: 6rem 0 4rem;
+  min-height: 100vh;
+  background-color: var(--color-background);
+}
+
+.news-page__header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.news-page__title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  color: var(--gray-12);
+  margin: 0 0 1rem 0;
+}
+
+.news-page__subtitle {
+  font-size: 1.25rem;
+  color: var(--gray-11);
+  margin: 0;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Override news section background for the page */
+.news-page .news {
+  background: transparent;
+  padding: 0;
+}
