@@ -1,151 +1,128 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import { Container, Button } from '../components/ui';
-import { useScrollToTop } from '../hooks/useScrollToTop';
+import { Link } from 'react-router-dom';
 import './ProjectsPage.css';
 
 interface Project {
-  id: number;
+  id: string;
   title: string;
+  subtitle: string;
   description: string;
-  image: string;
-  technologies: string[];
-  liveUrl?: string;
-  githubUrl?: string;
-  featured: boolean;
+  tags: string[];
+  category: string;
 }
 
 const ProjectsPage: React.FC = () => {
-  const navigate = useNavigate();
-  useScrollToTop();
-  const allProjects: Project[] = [
+  const projects: Project[] = [
     {
-      id: 1,
-      title: 'E-Commerce Platform',
-      description: 'A full-stack e-commerce solution with React, Node.js, and PostgreSQL. Features include user authentication, payment processing, inventory management, and admin dashboard.',
-      image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80',
-      technologies: ['React', 'Node.js', 'PostgreSQL', 'Stripe', 'Docker'],
-      liveUrl: '#',
-      githubUrl: '#',
-      featured: true
+      id: 'pixpro-platform',
+      title: 'PixPro Image Processing Platform',
+      subtitle: 'Complete Full-Stack Image Processing Ecosystem',
+      description: 'A comprehensive image processing platform with modular RESTful API, Angular frontend, and event-driven architecture. Features real-time collaboration, AI-powered image processing, and scalable infrastructure.',
+      tags: ['Angular', 'JavaScript', 'Clean Architecture', 'Event-Driven', 'AI Processing'],
+      category: 'Full-Stack Platform'
     },
     {
-      id: 2,
-      title: 'Task Management App',
-      description: 'A collaborative task management application with real-time updates, team collaboration features, and project tracking capabilities.',
-      image: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2339&q=80',
-      technologies: ['Vue.js', 'Express', 'Socket.io', 'MongoDB'],
-      liveUrl: '#',
-      githubUrl: '#',
-      featured: true
+      id: 'workers-api',
+      title: 'Employee Vacation Management System',
+      subtitle: 'WorkersAPI - RESTful Employee Management',
+      description: 'A RESTful API for managing employee vacation requests in a company. Built with TypeScript and modern backend practices, featuring comprehensive employee management and vacation tracking capabilities.',
+      tags: ['TypeScript', 'RESTful API', 'Employee Management', 'Backend Development'],
+      category: 'Backend API'
     },
     {
-      id: 3,
-      title: 'Weather Dashboard',
-      description: 'A responsive weather dashboard with location-based forecasts, interactive maps, and detailed weather analytics.',
-      image: 'https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2325&q=80',
-      technologies: ['React', 'TypeScript', 'Chart.js', 'OpenWeather API'],
-      liveUrl: '#',
-      githubUrl: '#',
-      featured: false
+      id: 'qatu-platform',
+      title: 'Q\'atu Retail Platform',
+      subtitle: 'Complete E-commerce Solution',
+      description: 'A comprehensive retail platform with .NET Core API backend and JavaScript frontend. Features modern authentication, inventory management, and scalable architecture for retail operations.',
+      tags: ['C#', '.NET Core', 'JavaScript', 'E-commerce', 'Retail'],
+      category: 'E-commerce Platform'
     },
     {
-      id: 4,
-      title: 'Portfolio Website',
-      description: 'A minimalist portfolio website built with modern web technologies, featuring smooth animations and responsive design.',
-      image: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2339&q=80',
-      technologies: ['React', 'CSS3', 'Framer Motion'],
-      liveUrl: '#',
-      githubUrl: '#',
-      featured: false
+      id: 'uno-game-platform',
+      title: 'Uno Game Platform',
+      subtitle: 'Multiplayer Card Game System',
+      description: 'A complete Uno game implementation with backend service using vanilla JavaScript and dependency injection, plus a monolithic SPA frontend with Component-Driven Architecture and Feature-Driven design.',
+      tags: ['JavaScript', 'SPA', 'Game Development', 'Component Architecture'],
+      category: 'Game Development'
     },
     {
-      id: 5,
-      title: 'Social Media Dashboard',
-      description: 'An analytics dashboard for social media management with data visualization, scheduling tools, and performance metrics.',
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80',
-      technologies: ['Next.js', 'Python', 'D3.js', 'PostgreSQL'],
-      liveUrl: '#',
-      githubUrl: '#',
-      featured: false
+      id: 'space-invaders-game',
+      title: 'Space Invaders Game',
+      subtitle: 'Cross-Platform Game with Uno Platform',
+      description: 'A space invaders game implementation using Uno Platform Foundation and MVVM model. Demonstrates cross-platform game development with modern architectural patterns.',
+      tags: ['C#', 'Uno Platform', 'MVVM', 'Game Development', 'Cross-Platform'],
+      category: 'Cross-Platform Game'
     },
     {
-      id: 6,
-      title: 'Recipe Sharing Platform',
-      description: 'A community-driven recipe sharing platform with search functionality, user ratings, and meal planning features.',
-      image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80',
-      technologies: ['React', 'Firebase', 'Material-UI'],
-      liveUrl: '#',
-      githubUrl: '#',
-      featured: false
+      id: 'game-of-life',
+      title: 'Conway\'s Game of Life',
+      subtitle: 'Java Implementation of Cellular Automaton',
+      description: 'An implementation of Conway\'s Game of Life using Java. Demonstrates algorithmic thinking and object-oriented programming principles in a classic computer science simulation.',
+      tags: ['Java', 'Algorithm', 'Simulation', 'Object-Oriented Programming'],
+      category: 'Algorithm Implementation'
+    },
+    {
+      id: 'oberstaff-technical-test',
+      title: 'Oberstaff Backend Technical Test',
+      subtitle: 'Python Backend Development Assessment',
+      description: 'A comprehensive backend development test solution demonstrating Python skills, API design, and problem-solving abilities. Showcases technical proficiency in backend development.',
+      tags: ['Python', 'Backend Development', 'API Design', 'Technical Assessment'],
+      category: 'Technical Assessment'
+    },
+    {
+      id: 'async-image-fetcher',
+      title: 'Bulk Image Download API Service',
+      subtitle: 'AsyncImage Fetcher API',
+      description: 'A robust and efficient backend service designed to streamline the bulk downloading of images from remote URLs, with smart concurrency control and unique image storage.',
+      tags: ['C#', '.NET Core', 'Async Programming', 'Image Processing', 'API'],
+      category: 'API Development'
+    },
+    {
+      id: 'chat-app-microservices',
+      title: 'Distributed Real-time Chat Application',
+      subtitle: 'Chat App Microservices',
+      description: 'A distributed system designed to enable users to communicate through real-time messaging in chat rooms. Incorporates user registration, authentication, and real-time communication features.',
+      tags: ['Microservices', 'Real-time', 'C#', 'Distributed Systems', 'Chat'],
+      category: 'Microservices'
+    },
+    {
+      id: 'youtube-api-testing',
+      title: 'YouTube Data API Integration Project',
+      subtitle: 'YouTube API Testing Project',
+      description: 'The YouTube Data API allows you to incorporate features that are normally executed on the YouTube website into your own website or application. This project demonstrates various API integrations and data handling.',
+      tags: ['JavaScript', 'YouTube API', 'Data Integration', 'Web Development'],
+      category: 'API Integration'
     }
   ];
 
   return (
     <div className="projects-page">
-      <Container size="lg">
-        <div className="projects-page__header">
-          <h1 className="projects-page__title">All Projects</h1>
-          <p className="projects-page__subtitle">
-            A comprehensive showcase of my work and personal projects
-          </p>
+      <div className="container">
+        <div className="page-header">
+          <h1>Craft</h1>
+          <p>Selected projects showcasing full-stack development, cloud infrastructure, and software architecture expertise.</p>
         </div>
-
-        <div className="projects-page__experience-list">
-          {allProjects.map((project) => (
-            <div key={project.id} className="experience-item">
-              <div className="experience-item__content">
-                <div className="experience-item__header">
-                  <h3 className="experience-item__title">{project.title}</h3>
-                  <div className="experience-item__meta">
-                    <span className="experience-item__type">Professional Project</span>
-                    <span className="experience-item__status">Completed</span>
-                  </div>
+        <div className="projects-grid">
+          {projects.map((project) => (
+            <div key={project.id} className="project-card">
+              <div className="project-card-content">
+                <div className="project-category">{project.category}</div>
+                <h3 className="project-title">{project.title}</h3>
+                <p className="project-subtitle">{project.subtitle}</p>
+                <p className="project-description">{project.description}</p>
+                <div className="project-tags">
+                  {project.tags.map((tag, index) => (
+                    <span key={index} className="project-tag">{tag}</span>
+                  ))}
                 </div>
-                
-                <p className="experience-item__description">{project.description}</p>
-                
-                <div className="experience-item__technologies">
-                  <h4>Technologies Used:</h4>
-                  <div className="tech-list">
-                    {project.technologies.map((tech, index) => (
-                      <span key={index} className="tech-tag">{tech}</span>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="experience-item__actions">
-                  <Button 
-                    variant="primary" 
-                    size="md"
-                    onClick={() => navigate(`/project/${project.id}`)}
-                  >
-                    View Details
-                  </Button>
-                  {project.liveUrl && (
-                    <Button 
-                      variant="outline" 
-                      size="md"
-                      onClick={() => window.open(project.liveUrl, '_blank')}
-                    >
-                      Live Demo
-                    </Button>
-                  )}
-                  {project.githubUrl && (
-                    <Button 
-                      variant="outline" 
-                      size="md"
-                      onClick={() => window.open(project.githubUrl, '_blank')}
-                    >
-                      View Code
-                    </Button>
-                  )}
-                </div>
+                <Link to={`/projects/${project.id}`} className="project-link">
+                  View Details
+                </Link>
               </div>
             </div>
           ))}
         </div>
-      </Container>
+      </div>
     </div>
   );
 };

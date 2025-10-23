@@ -3,23 +3,20 @@ import './Container.css';
 
 interface ContainerProps {
   children: React.ReactNode;
-  size?: 'sm' | 'md' | 'lg' | 'xl' | 'full';
   className?: string;
+  maxWidth?: 'sm' | 'md' | 'lg' | 'xl';
 }
 
-export const Container: React.FC<ContainerProps> = ({
+const Container: React.FC<ContainerProps> = ({
   children,
-  size = 'lg',
   className = '',
+  maxWidth = 'lg'
 }) => {
-  const baseClasses = 'container';
-  const sizeClasses = `container--${size}`;
-
-  const classes = `${baseClasses} ${sizeClasses} ${className}`.trim();
-
   return (
-    <div className={classes}>
+    <div className={`container container-${maxWidth} ${className}`}>
       {children}
     </div>
   );
 };
+
+export default Container;

@@ -1,30 +1,47 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 
-export const useScrollAnimation = (threshold = 0.1) => {
-  const [isVisible, setIsVisible] = useState(false);
-  const ref = useRef<HTMLElement>(null);
+interface UseScrollAnimationOptions {
+  threshold?: number;
+  rootMargin?: string;
+  triggerOnce?: boolean;
+}
+
+export const useScrollAnimation = (
+  options: UseScrollAnimationOptions = {}
+) => {
+  const elementRef = useRef<HTMLElement>(null);
+  const {
+    threshold = 0.1,
+    rootMargin = '0px 0px -100px 0px',
+    triggerOnce = false
+  } = options;
 
   useEffect(() => {
+    const element = elementRef.current;
+    if (!element) return;
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsVisible(true);
-          // Once visible, we can stop observing
-          observer.disconnect();
+          element.classList.add('fade-in-up');
+          element.classList.remove('fade-out-down');
+        } else {
+          element.classList.remove('fade-in-up');
+          element.classList.add('fade-out-down');
         }
       },
       {
         threshold,
-        rootMargin: '0px 0px -100px 0px'
+        rootMargin
       }
     );
 
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
+    observer.observe(element);
 
-    return () => observer.disconnect();
-  }, [threshold]);
+    return () => {
+      observer.unobserve(element);
+    };
+  }, [threshold, rootMargin, triggerOnce]);
 
-  return [ref, isVisible] as const;
+  return elementRef;
 };

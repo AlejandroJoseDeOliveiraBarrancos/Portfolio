@@ -1,43 +1,13 @@
+/* Global App Styles */
 .App {
   min-height: 100vh;
-  background-color: var(--color-background);
+  background: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  font-family: var(--font-main);
+  line-height: 1.6;
+  overflow-x: hidden;
 }
 
-.main-content {
-  padding-top: 4rem; /* Account for fixed header */
-}
-
-/* Smooth scrolling for anchor links */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--gray-2);
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--gray-6);
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--violet-8);
-}
-
-/* Focus styles for accessibility */
-*:focus-visible {
-  outline: 2px solid var(--violet-9);
-  outline-offset: 2px;
-}
-
-/* Selection styles */
-::selection {
-  background-color: var(--violet-a4);
-  color: var(--violet-12);
+main {
+  min-height: calc(100vh - 120px);
 }

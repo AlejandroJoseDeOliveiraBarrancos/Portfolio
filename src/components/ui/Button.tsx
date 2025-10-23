@@ -3,34 +3,24 @@ import './Button.css';
 
 interface ButtonProps {
   children: React.ReactNode;
-  variant?: 'primary' | 'secondary' | 'outline' | 'ghost';
-  size?: 'sm' | 'md' | 'lg';
   onClick?: () => void;
+  variant?: 'primary' | 'secondary' | 'outline';
+  size?: 'sm' | 'md' | 'lg';
   disabled?: boolean;
   className?: string;
-  type?: 'button' | 'submit' | 'reset';
 }
 
-export const Button: React.FC<ButtonProps> = ({
+const Button: React.FC<ButtonProps> = ({
   children,
+  onClick,
   variant = 'primary',
   size = 'md',
-  onClick,
   disabled = false,
-  className = '',
-  type = 'button',
+  className = ''
 }) => {
-  const baseClasses = 'btn';
-  const variantClasses = `btn--${variant}`;
-  const sizeClasses = `btn--${size}`;
-  const disabledClasses = disabled ? 'btn--disabled' : '';
-
-  const classes = `${baseClasses} ${variantClasses} ${sizeClasses} ${disabledClasses} ${className}`.trim();
-
   return (
     <button
-      type={type}
-      className={classes}
+      className={`btn btn-${variant} btn-${size} ${className}`}
       onClick={onClick}
       disabled={disabled}
     >
@@ -38,3 +28,5 @@ export const Button: React.FC<ButtonProps> = ({
     </button>
   );
 };
+
+export default Button;

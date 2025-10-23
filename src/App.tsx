@@ -1,50 +1,34 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-import { Header } from './components/layout/Header';
-import { Footer } from './components/layout/Footer';
-import { ProgressIndicator } from './components/ui/ProgressIndicator';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { useScrollToTop } from './hooks/useScrollToTop';
+import './App.css';
+import Header from './components/layout/Header';
+import Footer from './components/layout/Footer';
 import HomePage from './pages/HomePage';
 import ProjectsPage from './pages/ProjectsPage';
-import NewsPage from './pages/NewsPage';
 import ProjectDetailPage from './pages/ProjectDetailPage';
+import NewsPage from './pages/NewsPage';
 import ArticleDetailPage from './pages/ArticleDetailPage';
-import './App.css';
 
-function AppContent() {
-  const location = useLocation();
+const AppContent: React.FC = () => {
+  useScrollToTop();
   
-  // Define sections based on the current page
-  const getSections = () => {
-    if (location.pathname === '/') {
-      return ['home', 'about', 'projects', 'news', 'contact'];
-    } else if (location.pathname.startsWith('/project/')) {
-      return ['header', 'content', 'technologies', 'actions'];
-    } else if (location.pathname.startsWith('/article/')) {
-      return ['header', 'content', 'meta', 'actions'];
-    }
-    return [];
-  };
-  
-  const sections = getSections();
-  const showProgressIndicator = sections.length > 0;
-
   return (
     <div className="App">
       <Header />
-      <main className="main-content">
+      <main>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/projects" element={<ProjectsPage />} />
+          <Route path="/projects/:id" element={<ProjectDetailPage />} />
           <Route path="/news" element={<NewsPage />} />
-          <Route path="/project/:id" element={<ProjectDetailPage />} />
-          <Route path="/article/:id" element={<ArticleDetailPage />} />
+          <Route path="/news/:id" element={<ArticleDetailPage />} />
         </Routes>
       </main>
       <Footer />
-      {showProgressIndicator && <ProgressIndicator sections={sections} />}
     </div>
   );
-}
+};
 
 function App() {
   return (

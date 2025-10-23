@@ -1,0 +1,82 @@
+ALEJANDRO J. DE OLIVEIRA B. RESUME
+SOFTWARE ENGINEER 
+◇———————————————————————◇
++59168302727 • alejandrojose.deoliveira@gmail.com • Santa Cruz - Bolivia
+
+
+PROFESSIONAL SUMMARY
+
+I am a skilled and versatile Software Engineer with over 2  years of combined experience in full-stack development, backend systems, cloud infrastructure, and software architecture. I communicate effectively within a team and adapt quickly to team cultures. My English proficiency is strong, and I possess a proven ability to learn rapidly, as demonstrated throughout my project history.
+
+AREAS OF EXPERTISE
+
+Technical Skills
+Java (Spring Boot, JDBC) | C# (.NET, ASP.NET) | Python (Django, Flask) | JavaScript (Express, Node.js) | TypeScript (Angular)  | DB management | CI/CD | DevOps | Kubernetes (GKE) | Google Cloud Platform (Cloud Run, Cloud SQL, Cloud Build, Compute Engine, IAM)  | Cloudflare | GitHub Actions | OpenAI | AI Agents.
+Professional Skills
+Software Architecture | Cloud Infrastructure Design | Backend Engineering | DevOps & Observability | Technical Leadership | Agile Methodology | Project Planning & Delivery | Technical Spikes & Research | CI/CD Best Practices | Effective Communication | Mentorship & Documentation.
+
+
+
+PROFESSIONAL EXPERIENCE
+
+Symmetry Mobile App, SymmetryClub LLC | Delaware, USA  
+Oct 2024 – Present
+Currently contributing to the backend development of a mobile application.
+Delivered backend API endpoints with Django, supporting complex logic operations.
+Maintained >95% uptime with seamless Docker-based PostgreSQL environments.
+Wrote 300+ tests (unit, functional, E2E) ensuring bug-free production releases.
+Orchestrated Kubernetes deployment for Celery workers and beat scheduler.
+Used Redis (MemoryStore) for event communication and response caching, reducing API latency by 60%.
+Managed integration with external systems and providers as OpenAI, Cloudflare and others.
+Achieved sub-3s response times for 95% of client requests through GCP load balancing and pooling via PgBouncer on Compute Engine.
+Agrouniverso Desktop App, Agrouniverso | Santa Cruz, Bolivia		
+Sep 2024 – Jun 2025
+Recruited to develop a standalone Windows Forms application for agricultural operations.
+Created and connected 10+ business logic components using Clean Architecture and MVC.
+Enabled non-technical users to manage workflows, improving data operations by 30%.
+Achieved 100% compatibility with local SQL Server environments via Dockerized setups.
+
+
+Qatu Store Web App, Qatu | La Paz, Bolivia				
+Feb 2024 – Oct 2024
+Hired to design and deploy a secure, scalable SPA with modern authentication for a retail platform.
+Achieved 88% test coverage across unit, integration, and E2E tests using a modular, clean architecture.
+Integrated SSO with Firebase, enabling secure OAuth-based access through Google and Facebook.
+Delivered 2FA + OTP + invoice emailing with zero reported bugs during production testing.
+Reduced environment setup time by 40% using Docker and CI/CD pipelines.
+Presented 3 system demos to stakeholders across non-technical teams, improving internal adoption rate.
+
+
+QR Scanner Web App, Universidad Técnica de Oruro | Oruro, Bolivia		
+March 2024 – May 2024
+Hired to implement QR code generation and scanning within a modular frontend/backend architecture.
+Developed a Hexagonal-architecture backend with Node.js supporting 99.9% uptime.
+Reduced frontend QR generation latency by 50ms on average.
+Applied 100% functional programming practices, improving code modularity and testability.
+
+
+Technology Teacher, Independent | Santa Cruz, Bolivia		
+Feb 2019 - Present
+Dedicated to empowering students with foundational and applied programming and engineering skills.
+Mentored 50+ students per year, increasing average exam scores by 30%.
+Delivered 40 hours of personalized mentoring under the Jala University Mentor U Program.
+Created 20+ customized lesson plans, contributing to significant performance improvements.
+
+
+
+EDUCATION
+
+Jala University, Beverly Hills - CA, USA		
+Sep 2022 - present
+Commercial Software Engineering student with a concentration in Design and Architecture.
+
+Universidad Autonoma Gabriel Rene Moreno,  santa Cruz de la Sierra, Bolivia
+Sep 2020 - 2025
+Software Systems Engineering student .
+
+Centro Boliviano Americano (CBA), Cochabamba, Bolivia
+2019 – 2022
+Completed High Intermediate English Language Studies, focused on academic and professional fluency.
+
+
+

@@ -1,4 +1,4 @@
-export { Button } from './Button';
-export { Card } from './Card';
-export { Container } from './Container';
-export { ProgressIndicator } from './ProgressIndicator';
+export { default as Button } from './Button';
+export { default as Card } from './Card';
+export { default as Container } from './Container';
+export { default as ProgressIndicator } from './ProgressIndicator';

@@ -3,26 +3,20 @@ import './Card.css';
 
 interface CardProps {
   children: React.ReactNode;
-  variant?: 'default' | 'elevated' | 'outlined';
   className?: string;
-  onClick?: () => void;
+  hover?: boolean;
 }
 
-export const Card: React.FC<CardProps> = ({
+const Card: React.FC<CardProps> = ({
   children,
-  variant = 'default',
   className = '',
-  onClick,
+  hover = false
 }) => {
-  const baseClasses = 'card';
-  const variantClasses = `card--${variant}`;
-  const clickableClasses = onClick ? 'card--clickable' : '';
-
-  const classes = `${baseClasses} ${variantClasses} ${clickableClasses} ${className}`.trim();
-
   return (
-    <div className={classes} onClick={onClick}>
+    <div className={`card ${hover ? 'card-hover' : ''} ${className}`}>
       {children}
     </div>
   );
 };
+
+export default Card;
