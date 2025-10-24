@@ -11,14 +11,11 @@ const About: React.FC = () => {
         <div className="about-content">
           <div className="about-text">
             <p>
-              I am a skilled and versatile Software Engineer with over 2 years of combined experience in 
-              full-stack development, backend systems, cloud infrastructure, and software architecture. 
-              I communicate effectively within a team and adapt quickly to team cultures.
+            This space reflects my learning journey: Challenges embraced, difficulties overcome, and lessons turned into progress.
+            I believe in continuous improvement and in designing systems that are both scalable and meaningful.
             </p>
             <p>
-              My English proficiency is strong, and I possess a proven ability to learn rapidly, 
-              as demonstrated throughout my project history. I specialize in creating scalable, 
-              maintainable systems that deliver exceptional user experiences.
+            My approach is pragmatic and peaceful, grounded in structure, collaboration, and shared purpose.
             </p>
             <div className="about-skills">
               <h3>Skills & Expertise</h3>

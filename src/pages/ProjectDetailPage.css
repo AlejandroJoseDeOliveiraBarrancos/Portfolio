@@ -7,8 +7,7 @@
 .project-detail-header {
   text-align: center;
   padding: var(--spacing-xxl) 0 var(--spacing-xl);
-  border-bottom: 1px solid var(--color-border-primary);
-  margin-bottom: var(--spacing-xl);
+  margin-bottom: var(--spacing-x);
 }
 
 .project-detail-header h1 {
@@ -52,7 +51,7 @@
   font-size: 1.1rem;
   color: var(--color-text-secondary);
   line-height: 1.6;
-  margin-bottom: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
 }
 
 .project-links {
@@ -60,6 +59,7 @@
   justify-content: center;
   gap: var(--spacing-md);
   margin-bottom: var(--spacing-lg);
+  margin-top: 2.5rem;
 }
 
 .project-link {
@@ -120,39 +120,35 @@
   color: var(--color-text-primary);
 }
 
-.challenge-list,
-.solution-list,
-.result-list {
-  list-style: none;
-  padding: 0;
-}
-
-.challenge-list li,
-.solution-list li,
-.result-list li {
+.article-content {
+  font-size: 1.1rem;
+  line-height: 1.8;
   color: var(--color-text-secondary);
-  margin-bottom: var(--spacing-sm);
-  padding-left: var(--spacing-md);
-  position: relative;
-  line-height: 1.6;
 }
 
-.challenge-list li::before {
-  content: '⚠️';
-  position: absolute;
-  left: 0;
+.article-content p {
+  margin-bottom: var(--spacing-lg);
+  text-align: justify;
 }
 
-.solution-list li::before {
-  content: '✅';
-  position: absolute;
-  left: 0;
+.article-content strong {
+  color: var(--color-text-primary);
+  font-weight: 600;
 }
 
-.result-list li::before {
-  content: '📈';
-  position: absolute;
-  left: 0;
+.article-content em {
+  color: var(--color-text-primary);
+  font-style: italic;
+  font-weight: 500;
+}
+
+.article-content h3 {
+  font-size: 1.4rem;
+  color: var(--color-text-primary);
+  margin: var(--spacing-xl) 0 var(--spacing-md) 0;
+  font-weight: 600;
+  border-bottom: 2px solid var(--color-border-primary);
+  padding-bottom: var(--spacing-xs);
 }
 
 @media (max-width: 768px) {
@@ -171,5 +167,20 @@
   
   .tech-grid {
     gap: var(--spacing-xs);
+  }
+  
+  .article-content {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+  
+  .article-content h3 {
+    font-size: 1.2rem;
+    margin: var(--spacing-lg) 0 var(--spacing-sm) 0;
+  }
+  
+  .article-content p {
+    text-align: left;
+    margin-bottom: var(--spacing-md);
   }
 }

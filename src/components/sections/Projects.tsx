@@ -3,6 +3,12 @@ import { Link } from 'react-router-dom';
 import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 import './Projects.css';
 
+// Import project images
+import chatappImage from '../../assets/images/chatapp/image.png';
+import chanchitotoolsImage from '../../assets/images/chanchitotools/image.png';
+import pixproImage from '../../assets/images/pixpro/image.png';
+import qatuImage from '../../assets/images/qatu/image.png';
+
 interface Project {
   id: string;
   title: string;
@@ -23,8 +29,17 @@ const Projects: React.FC = () => {
       subtitle: 'Chat App Microservices',
       description: 'A distributed system designed to enable users to communicate through real-time messaging in chat rooms. Incorporates user registration, authentication, and real-time communication features.',
       tags: ['Microservices', 'Real-time', 'C#', 'Distributed Systems', 'Chat'],
-      image: '/api/placeholder/600/400',
+      image: chatappImage,
       category: 'Microservices'
+    },
+    {
+      id: 'chanchito-tools',
+      title: 'ChanchitoTools',
+      subtitle: 'Open Source Development Tools Collection',
+      description: 'A comprehensive collection of open-source development tools and utilities. Features Firebase Web Client, Testing Abstractions for .NET, Command Management system, and Context Engineering toolkit for AI prompt optimization.',
+      tags: ['Open Source', 'C#', 'JavaScript', 'Firebase', 'Testing', 'AI Tools'],
+      image: chanchitotoolsImage,
+      category: 'Open Source Tools'
     },
     {
       id: 'pixpro-platform',
@@ -32,7 +47,7 @@ const Projects: React.FC = () => {
       subtitle: 'Complete Full-Stack Image Processing Ecosystem',
       description: 'A comprehensive image processing platform with modular RESTful API, Angular frontend, and event-driven architecture. Features real-time collaboration, AI-powered image processing, and scalable infrastructure.',
       tags: ['Angular', 'JavaScript', 'Clean Architecture', 'Event-Driven', 'AI Processing'],
-      image: '/api/placeholder/600/400',
+      image: pixproImage,
       category: 'Full-Stack Platform'
     },
     {
@@ -41,7 +56,7 @@ const Projects: React.FC = () => {
       subtitle: 'Complete E-commerce Solution',
       description: 'A comprehensive retail platform with .NET Core API backend and JavaScript frontend. Features modern authentication, inventory management, and scalable architecture for retail operations.',
       tags: ['C#', '.NET Core', 'JavaScript', 'E-commerce', 'Retail'],
-      image: '/api/placeholder/600/400',
+      image: qatuImage,
       category: 'E-commerce Platform'
     }
   ];
