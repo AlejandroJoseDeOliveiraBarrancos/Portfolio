@@ -39,6 +39,7 @@
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin-bottom: var(--spacing-sm);
+  text-align: center;
 }
 
 .project-subtitle {
