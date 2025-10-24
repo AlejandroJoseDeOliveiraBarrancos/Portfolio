@@ -161,10 +161,26 @@ a:hover {
 
 .fade-in-up {
   animation: fadeInUp 0.6s ease-out forwards;
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .fade-out-down {
   animation: fadeOutDown 0.6s ease-out forwards;
+  opacity: 0;
+  transform: translateY(-30px);
+}
+
+/* Initial state for elements that will be animated */
+[data-scroll-animate] {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+[data-scroll-animate].fade-in-up {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .morphing-blob {

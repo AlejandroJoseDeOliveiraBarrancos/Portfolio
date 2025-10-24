@@ -1,13 +1,13 @@
 .project-detail-page {
-  padding-top: 120px;
+  padding-top: clamp(80px, 8vw, 120px);
   min-height: 100vh;
   background: var(--color-bg-primary);
 }
 
 .project-detail-header {
   text-align: center;
-  padding: var(--spacing-xxl) 0 var(--spacing-xl);
-  margin-bottom: var(--spacing-x);
+  padding: clamp(var(--spacing-lg), 4vw, var(--spacing-xxl)) clamp(var(--spacing-md), 5vw, var(--spacing-xl));
+  margin-bottom: clamp(var(--spacing-md), 3vw, var(--spacing-xl));
 }
 
 .project-detail-header h1 {
@@ -19,15 +19,16 @@
 }
 
 .project-detail-header p {
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
   color: var(--color-text-secondary);
-  max-width: 600px;
+  max-width: min(90vw, 600px);
   margin: 0 auto;
+  padding: 0 clamp(var(--spacing-sm), 3vw, var(--spacing-md));
 }
 
 .project-detail-content {
-  padding: var(--spacing-xl) 0;
-  max-width: 800px;
+  padding: clamp(var(--spacing-lg), 4vw, var(--spacing-xl)) clamp(var(--spacing-md), 5vw, var(--spacing-xl));
+  max-width: min(90vw, 800px);
   margin: 0 auto;
 }
 
@@ -41,41 +42,43 @@
 }
 
 .project-subtitle {
-  font-size: 1.3rem;
+  font-size: clamp(1.1rem, 3vw, 1.3rem);
   color: var(--color-text-secondary);
   margin-bottom: var(--spacing-md);
   font-weight: 500;
 }
 
 .project-description {
-  font-size: 1.1rem;
+  font-size: clamp(1rem, 2.5vw, 1.1rem);
   color: var(--color-text-secondary);
   line-height: 1.6;
-  margin-bottom: var(--spacing-xl);
+  margin-bottom: clamp(var(--spacing-lg), 4vw, var(--spacing-xl));
 }
 
 .project-links {
   display: flex;
   justify-content: center;
-  gap: var(--spacing-md);
-  margin-bottom: var(--spacing-lg);
-  margin-top: 2.5rem;
+  gap: clamp(var(--spacing-sm), 3vw, var(--spacing-md));
+  margin-bottom: clamp(var(--spacing-md), 3vw, var(--spacing-lg));
+  margin-top: clamp(1rem, 4vw, 2.5rem);
 }
 
 .project-link {
   display: inline-block;
   background: var(--color-text-primary);
   color: var(--color-bg-primary);
-  padding: var(--spacing-xs) var(--spacing-md);
+  padding: clamp(var(--spacing-xs), 2vw, var(--spacing-sm)) clamp(var(--spacing-sm), 3vw, var(--spacing-md));
   border-radius: var(--border-radius);
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: clamp(0.85rem, 2vw, 0.9rem);
   text-decoration: none;
   transition: var(--transition);
+  min-width: max-content;
+  align-self: center;
 }
 
 .project-link:hover {
-  background: var(--color-accent-hover);
+  background: black;
   transform: translateY(-2px);
 }
 
@@ -84,32 +87,32 @@
 }
 
 .content-section h2 {
-  font-size: 1.8rem;
+  font-size: clamp(1.4rem, 4vw, 1.8rem);
   color: var(--color-text-primary);
-  margin-bottom: var(--spacing-md);
+  margin-bottom: clamp(var(--spacing-sm), 2vw, var(--spacing-md));
   font-weight: 600;
 }
 
 .content-section p {
-  font-size: 1.1rem;
+  font-size: clamp(1rem, 2.5vw, 1.1rem);
   color: var(--color-text-secondary);
   line-height: 1.7;
-  margin-bottom: var(--spacing-md);
+  margin-bottom: clamp(var(--spacing-sm), 2vw, var(--spacing-md));
 }
 
 .tech-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--spacing-sm);
-  margin-bottom: var(--spacing-md);
+  gap: clamp(var(--spacing-xs), 2vw, var(--spacing-sm));
+  margin-bottom: clamp(var(--spacing-sm), 2vw, var(--spacing-md));
 }
 
 .tech-tag {
   background: var(--color-bg-card);
   color: var(--color-text-secondary);
-  padding: var(--spacing-xs) var(--spacing-sm);
+  padding: clamp(var(--spacing-xs), 1.5vw, var(--spacing-sm)) clamp(var(--spacing-sm), 2vw, var(--spacing-md));
   border-radius: var(--border-radius);
-  font-size: 0.9rem;
+  font-size: clamp(0.8rem, 2vw, 0.9rem);
   font-weight: 500;
   border: 1px solid var(--color-border-primary);
   transition: var(--transition);
@@ -121,13 +124,13 @@
 }
 
 .article-content {
-  font-size: 1.1rem;
+  font-size: clamp(1rem, 2.5vw, 1.1rem);
   line-height: 1.8;
   color: var(--color-text-secondary);
 }
 
 .article-content p {
-  margin-bottom: var(--spacing-lg);
+  margin-bottom: clamp(var(--spacing-md), 3vw, var(--spacing-lg));
   text-align: justify;
 }
 
@@ -143,44 +146,53 @@
 }
 
 .article-content h3 {
-  font-size: 1.4rem;
+  font-size: clamp(1.2rem, 3.5vw, 1.4rem);
   color: var(--color-text-primary);
-  margin: var(--spacing-xl) 0 var(--spacing-md) 0;
+  margin: clamp(var(--spacing-lg), 4vw, var(--spacing-xl)) 0 clamp(var(--spacing-sm), 2vw, var(--spacing-md)) 0;
   font-weight: 600;
   border-bottom: 2px solid var(--color-border-primary);
-  padding-bottom: var(--spacing-xs);
+  padding-bottom: clamp(var(--spacing-xs), 1vw, var(--spacing-sm));
+}
+
+/* Mobile and Tablet Responsive Design */
+@media (max-width: 1024px) {
+  .project-detail-content {
+    padding: clamp(var(--spacing-md), 3vw, var(--spacing-lg)) clamp(var(--spacing-sm), 4vw, var(--spacing-md));
+  }
 }
 
 @media (max-width: 768px) {
-  .project-detail-page {
-    padding-top: 100px;
-  }
-  
-  .project-detail-header {
-    padding: var(--spacing-xl) 0 var(--spacing-lg);
-  }
-  
   .project-links {
     flex-direction: column;
-    gap: var(--spacing-sm);
+    align-items: center;
+    gap: clamp(var(--spacing-sm), 2vw, var(--spacing-md));
   }
   
-  .tech-grid {
-    gap: var(--spacing-xs);
-  }
-  
-  .article-content {
-    font-size: 1rem;
-    line-height: 1.7;
-  }
-  
-  .article-content h3 {
-    font-size: 1.2rem;
-    margin: var(--spacing-lg) 0 var(--spacing-sm) 0;
+  .project-link {
+    width: 100%;
+    max-width: 200px;
+    text-align: center;
   }
   
   .article-content p {
     text-align: left;
-    margin-bottom: var(--spacing-md);
+  }
+  
+  .tech-grid {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-detail-header {
+    padding: clamp(var(--spacing-md), 3vw, var(--spacing-lg)) clamp(var(--spacing-sm), 4vw, var(--spacing-md));
+  }
+  
+  .project-detail-content {
+    padding: clamp(var(--spacing-sm), 2vw, var(--spacing-md)) clamp(var(--spacing-xs), 3vw, var(--spacing-sm));
+  }
+  
+  .article-content {
+    line-height: 1.6;
   }
 }
